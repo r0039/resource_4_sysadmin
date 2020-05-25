@@ -5,6 +5,11 @@
 
 # use cd to prevent the errot: No such file or directory
 # use mput to put multiple file from local host to remote host
+# 
+# reference: 
+# https://stackoverflow.com/questions/9349616/bash-eof-in-if-statement
+# https://stackoverflow.com/questions/51782406/adding-shell-if-statement-inside-lftp
+# https://stackoverflow.com/questions/17219416/how-to-use-a-linux-expect-script-to-enter-answer-a-prompt-for-password
 
 hostname=$(echo $HOSTNAME)
 dir=/home/unixadmin/config
