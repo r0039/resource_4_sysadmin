@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+  name: vault
+  namespace: default
+spec:
+  rules:
+  - host: vault.singtel5gplatform.com
+    http:
+      paths:
+      - backend:
+          serviceName: vault
+          servicePort: 8200
+        path: /
+  tls:
+  - hosts:
+    - vault.singtel5gplatform.com
+    secretName: singtel5gplatform-com-cert

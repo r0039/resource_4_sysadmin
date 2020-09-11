@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: vault
+  labels:
+    app: vault
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: vault
+    spec:
+      containers:
+      - name: vault
+        command: ["vault", "server", "-config", "/vault/config/config.hcl"]
+        image: "vault:1.1.3"
+        imagePullPolicy: IfNotPresent
+        env:
+          - name: VAULT_ADDR
+            valueFrom:
+              configMapKeyRef:
+                name: vault-config
+                key: vault_addr
+          - name: VAULT_API_ADDR
+            valueFrom:
+              configMapKeyRef:
+                name: vault-config
+                key: vault_api_addr
+        securityContext:
+          capabilities:
+            add:
+              - IPC_LOCK
+        volumeMounts:
+          - name: vault-config-volume
+            mountPath: /vault/config/config.hcl
+            subPath: config.hcl
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+      volumes:
+        - name: vault-config-volume
+          configMap:
+            name: vault-config
+
