@@ -1,0 +1,40 @@
+logLevel = "ERROR"
+defaultEntryPoints = ["http", "https"]
+
+[entryPoints]
+   [entryPoints.http]
+   address = ":80"
+   compress = true
+     [entryPoints.http.redirect]
+       entryPoint = "https"
+   [entryPoints.https]
+   address = ":443"
+     [entryPoints.https.tls]
+     MinVersion = "VersionTLS12"
+       [[entryPoints.https.tls.certificates]]
+       CertFile = "/run/secrets/renewal2_star_innogr_am.crt"
+       KeyFile = "/run/secrets/renewal2_star_innogr_am.key"
+       [[entryPoints.https.tls.certificates]]
+       CertFile = "/run/secrets/renewal2_star_skylabteam_com.crt"
+       KeyFile = "/run/secrets/renewal2_star_skylabteam_com.key"
+
+# To enable compression support using gzip format:
+[accessLog]
+
+[docker]
+endpoint = "unix:///var/run/docker.sock"
+domain = "docker.localhost"
+watch = true
+exposedbydefault = false
+swarmmode = true
+
+[web]
+address = ":8443"
+CertFile = "/run/secrets/renewal2_star_innogr_am.crt"
+KeyFile = "/run/secrets/renewal2_star_innogr_am.key"
+
+[web.auth.basic]
+usersFile = "/etc/traefik.htpasswd"
+
+[web.statistics]
+RecentErrors = 100

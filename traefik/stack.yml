@@ -1,0 +1,59 @@
+version: "3.1"
+
+services:
+  lb:
+    image: "registry-az.innogr.am/traefik:az-production-20200821"
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8443:8443"
+    networks:
+      - swarm
+      - weavenet
+      - skylab
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - traefik:/data
+    command:
+      - --configfile=/etc/traefik.toml
+    deploy:
+      restart_policy:
+        condition: on-failure
+      replicas: 1
+      placement:
+        constraints:
+          - "node.role == manager"
+      resources:
+        limits:
+          cpus: '2'
+          memory: 1024m
+    secrets:
+      - renewal2_star_innogr_am.key
+      - renewal2_star_innogr_am.crt
+      - renewal2_star_skylabteam_com.key
+      - renewal2_star_skylabteam_com.crt
+
+networks:
+  swarm:
+    external:
+      name: swarm-overlay-default
+  weavenet:
+    external:
+      name: weavenet-default
+  skylab:
+    external:
+      name: skylab-demo
+
+volumes:
+  traefik:
+      driver: local
+
+secrets:
+  renewal2_star_innogr_am.key:
+    external: true
+  renewal2_star_innogr_am.crt:
+    external: true
+  renewal2_star_skylabteam_com.key:
+    external: true
+  renewal2_star_skylabteam_com.crt:
+    external: true

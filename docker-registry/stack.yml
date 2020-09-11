@@ -1,0 +1,67 @@
+version: "3.3"
+
+services:
+  registry:
+    image: registry:2
+    networks:
+      - weavenet
+      - swarm
+    ports:
+      - "5000:5000"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+      placement:
+        constraints:
+          - node.role == manager
+      labels:
+        traefik.enable: "true"
+        traefik.port: 5000
+        traefik.backend: "registry-production"
+        traefik.tags: "web"
+        traefik.docker.network: "swarm-overlay-default"
+        traefik.backend.loadbalancer.swarm: "true"
+        traefik.frontend.passHostHeader: "true"
+        traefik.frontend.rule: "Host: registry-az.innogr.am, registry.innogr.am"
+    volumes:
+      - registry:/data/docker-volumes/registry
+    secrets:
+      - star_innogr_am.key
+      - star_innogr_am.crt
+      - star_skylabteam_com.key
+      - star_skylabteam_com.crt
+      - docker_registry_htpasswd
+    environment:
+      - REGISTRY_HTTP_ADDR=0.0.0.0:5000
+      - REGISTRY_AUTH=htpasswd
+      - REGISTRY_AUTH_HTPASSWD_PATH=/run/secrets/docker_registry_htpasswd
+      - REGISTRY_AUTH_HTPASSWD_REALM="SkyLab Azure Docker Registry"
+      - REGISTRY_STORAGE=azure
+      - REGISTRY_STORAGE_AZURE_ACCOUNTNAME="registryafb3c92c438b61ab"
+      - REGISTRY_STORAGE_AZURE_ACCOUNTKEY="ZoOcRJ3A8ZZkpLBNW2YiT2qAtgWIN8DUHHVxAUJDydW+dXaVwlz8ZBmhuxchXbknO8U12FgzJIHdKWhOAQTykQ=="
+      - REGISTRY_STORAGE_AZURE_CONTAINER="registry"
+      - REGISTRY_STORAGE_REDIRECT_DISABLE=true
+
+networks:
+  swarm:
+    external:
+      name: swarm-overlay-default
+  weavenet:
+    external:
+      name: weavenet-default
+
+secrets:
+  star_innogr_am.key:
+    external: true
+  star_innogr_am.crt:
+    external: true
+  star_skylabteam_com.key:
+    external: true
+  star_skylabteam_com.crt:
+    external: true
+  docker_registry_htpasswd:
+    external: true
+
+volumes:
+  registry:
