@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Author:  Tien
 # Date:    14/05/2020
 
@@ -14,7 +13,7 @@
 hostname=$(echo $HOSTNAME)
 dir=/home/unixadmin/config
 
-lftp -u iot_user,7ytz1FlY sftp://iot_user@10.108.1.6:/home/DC1 << EOF
+lftp -u iot_user,7ytz1FlY sftp://user@1.1.1.1:/home/DC1 << EOF
 mkdir -p -f "$hostname"
 cd /home/DC1/$hostname/
 mput $dir/*

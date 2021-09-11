@@ -1,4 +1,6 @@
 #!/bin/bash
+# Author:	Tien
+# Purpose:	Check the URL existing or not
 #
 # --fail will make the exit status nonzero on a failed request
 # --head will avoid downloading the file contents, since we don't need it for this check
@@ -16,6 +18,8 @@
 # --spider option makes wget just check for the file instead of downloading it
 # 2> /dev/null silences wget's stderr output
 #
+
+url="https://google.com"
 
 if curl --output /dev/null --silent --head --fail "$url"; then
   echo "URL exists: $url"

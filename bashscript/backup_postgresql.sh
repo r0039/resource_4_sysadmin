@@ -5,7 +5,7 @@
 #VERSION:	0.1	Simple logical backup
 
 mkdir -p /home/azureuser/azureblob/$HOSTNAME/
-sudo su - postgres psql -c "pg_dumpall -f /home/azureuser/azureblob/ops2.az.innogr.am/file.`date '+%Y%m%d_%H:%M:%S'`.sql"
+sudo su - postgres psql -c "pg_dumpall -f /home/azureuser/azureblob/ops2/file.`date '+%Y%m%d_%H:%M:%S'`.sql"
 
 # Data Retention
 find /home/azureuser/azureblob/$HOSTNAME/ -mtime +180 -exec rm -rf {} \;

@@ -1,4 +1,5 @@
 #!/bin/bash
+# Author:	Tien
 
 for i in $(kubectl get deployment | awk '{print $1}')
 do

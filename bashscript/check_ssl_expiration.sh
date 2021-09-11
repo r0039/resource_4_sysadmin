@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Author: Tien
 # Data:   05 March, 2020
 

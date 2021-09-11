@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# Author:	Tien
+# Purpose:	Atom crashes after upgrading new version
 # on MacOS Big Sur
 # https://github.com/Squirrel/Squirrel.Mac/issues/182
 

@@ -71,7 +71,7 @@ for i in "${!images[@]}"
  done
 ### Push Docker Image
 # Login to Docker Registry
-docker login -u admin -p eEprX0OPuykg "$local_registry"
+docker login -u admin -p eEprPuykg "$local_registry"
 echo ">>>> Push Docker Images"
 for i in "${!emma_images[@]}"
  do

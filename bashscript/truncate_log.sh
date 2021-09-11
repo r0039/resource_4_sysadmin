@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Author:	Tien
 # Before deleting the logs, if you have a huge one, a good practice is to keep the last 100 lines or so, and then delete it. 
 # So, you can check what is happening after generating free space.
 # If you just delete it with “rm” and the log file is being used by the PostgreSQL server (or another service) space won’t 

@@ -1,9 +1,11 @@
 #!/bin/bash
-# 
+# Author:	Tien
+# Date:		11092021 
 # cat $i to check the input is correct. 
+# 
+# You must have the dir_list.txt file at the same place to run script.
 
-FILES=/var/lib/jenkins/jobs/dir.txt
-
+FILES=/var/lib/jenkins/jobs/dir_list.txt
 
 for i in `cat $FILES`
 do
