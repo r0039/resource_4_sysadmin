@@ -17,4 +17,4 @@ spec:
   tls:
   - hosts:
     - vault.example.com
-    secretName: singtel5gplatform-com-cert
+    secretName: 5gplatform-com-cert
