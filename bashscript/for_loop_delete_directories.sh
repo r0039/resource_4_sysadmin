@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## declare an array variable
-declare -a arr=("/var/lib/jenkins/jobs/k8s-infra/jobs/k8s-infra-check-pipeline/builds/1/workflow/" "/var/lib/jenkins/jobs/k8s-infra/jobs/k8s-infra-check-pipeline/builds/2/workflow/" "/var/lib/jenkins/jobs/k8s-infra/jobs/k8s-infra-check-pipeline/builds/3/workflow/" "/var/lib/jenkins/jobs/k8s-infra/jobs/k8s-infra-check-pipeline/builds/4/workflow/" "/var/lib/jenkins/jobs/k8s-infra/jobs/k8s-infra-check-pipeline/builds/5/workflow/" "/var/lib/jenkins/jobs/k8s-infra/jobs/k8s-infra-check-pipeline/builds/6/workflow/" "/var/lib/jenkins/jobs/k8s-infra/jobs/k8s-infra-check-pipeline/builds/7/workflow/")
+declare -a arr=("/var/lib/jenkins/jobs/dir0" "/var/lib/jenkins/jobs/dir1" "/var/lib/jenkins/jobs/dir2" "/var/lib/jenkins/jobs/dir3" "/var/lib/jenkins/jobs/dir4" "/var/lib/jenkins/jobs/dir5" "/var/lib/jenkins/jobs/dir6")
 
 ## now loop through the above array
 for i in "${arr[@]}"
