@@ -1,5 +1,5 @@
 FROM traefik:v1.7-alpine
-MAINTAINER "hai.nguyen@skylabteam.com"
+MAINTAINER "me@example.com"
 RUN apk add --update \
     bash \
   && rm -rf /var/cache/apk/*
