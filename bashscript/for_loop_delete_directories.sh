@@ -1,4 +1,6 @@
 #!/bin/bash
+# Author:         Tien
+# Source:         https://stackoverflow.com/questions/8880603/loop-through-an-array-of-strings-in-bash 
 
 ## declare an array variable
 declare -a arr=("/var/lib/jenkins/jobs/dir0" "/var/lib/jenkins/jobs/dir1" "/var/lib/jenkins/jobs/dir2" "/var/lib/jenkins/jobs/dir3" "/var/lib/jenkins/jobs/dir4" "/var/lib/jenkins/jobs/dir5" "/var/lib/jenkins/jobs/dir6")
