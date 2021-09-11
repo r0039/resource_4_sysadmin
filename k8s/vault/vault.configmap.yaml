@@ -12,7 +12,7 @@ data:
     storage "mysql" {
       address  = "10.17.10.10"
       username = "vault"
-      password = "skylab"
+      password = "password"
       database = "k8s_vault"
     }
   vault_addr: "http://0.0.0.0:8200"
