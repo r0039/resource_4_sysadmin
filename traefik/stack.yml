@@ -2,7 +2,7 @@ version: "3.1"
 
 services:
   lb:
-    image: "registry-az.innogr.am/traefik:az-production-20200821"
+    image: "registry-az.innogr.am/traefik:az-production"
     ports:
       - "80:80"
       - "443:443"
@@ -28,10 +28,10 @@ services:
           cpus: '2'
           memory: 1024m
     secrets:
-      - renewal2_star_innogr_am.key
-      - renewal2_star_innogr_am.crt
-      - renewal2_star_skylabteam_com.key
-      - renewal2_star_skylabteam_com.crt
+      - renewal2_star_am.key
+      - renewal2_star_am.crt
+      - renewal2_star_com.key
+      - renewal2_star_com.crt
 
 networks:
   swarm:
@@ -42,18 +42,18 @@ networks:
       name: weavenet-default
   skylab:
     external:
-      name: skylab-demo
+      name: demo
 
 volumes:
   traefik:
       driver: local
 
 secrets:
-  renewal2_star_innogr_am.key:
+  renewal2_star_am.key:
     external: true
-  renewal2_star_innogr_am.crt:
+  renewal2_star_am.crt:
     external: true
-  renewal2_star_skylabteam_com.key:
+  renewal2_star_com.key:
     external: true
-  renewal2_star_skylabteam_com.crt:
+  renewal2_star_com.crt:
     external: true
