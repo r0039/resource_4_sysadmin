@@ -2,12 +2,12 @@ version: '2'
 services:
   openldap:
     image: osixia/openldap:1.2.2
-    container_name: skylab_openldap
+    container_name: openldap
     restart: always
     environment:
       LDAP_LOG_LEVEL: "256"
-      LDAP_ORGANISATION: "SkyLab Group"
-      LDAP_DOMAIN: "skylabteam.com"
+      LDAP_ORGANISATION: "One Group"
+      LDAP_DOMAIN: "example.com"
       LDAP_BASE_DN: ""
       LDAP_ADMIN_PASSWORD: "admin"
       LDAP_CONFIG_PASSWORD: "config"
@@ -37,11 +37,11 @@ services:
     ports:
       - "3389:389"
       - "6636:636"
-    domainname: "skylabteam.com" # important: same as hostname
-    hostname: "skylabteam.com"
+    domainname: "example.com" # important: same as hostname
+    hostname: "example.com"
   phpldapadmin:
     image: osixia/phpldapadmin:latest
-    container_name: skylab_phpldapadmin
+    container_name: phpldapadmin
     restart: always
     environment:
       PHPLDAPADMIN_LDAP_HOSTS: "openldap"
