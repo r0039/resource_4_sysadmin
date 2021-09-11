@@ -7,11 +7,11 @@ from email.mime.text import MIMEText
 
 smtp_host = 'email-smtp.us-west-2.amazonaws.com'
 smtp_port = 465
-email_user = 'AKIAJMYKNUQA4H2CYAIA'
-email_password = 'AggE1sjIndnDq9xAmejAw/c2FkVFZDFwvW6tzyCpzkh2'
+email_user = 'AKIAJ2CYAIA'
+email_password = 'AggE1sjIndnDq9xAzkh2'
 
-sent_from = 'x-man@innogram.co'
-send_to = ['khanh.ngo@skylabteam.com']
+sent_from = 'xman@example'
+send_to = ['user@example.com']
 send_cc = []
 send_bcc = []
 subject = "Test email sending"
