@@ -7,7 +7,7 @@ metadata:
   namespace: default
 spec:
   rules:
-  - host: vault.singtel5gplatform.com
+  - host: vault.example.com
     http:
       paths:
       - backend:
@@ -16,5 +16,5 @@ spec:
         path: /
   tls:
   - hosts:
-    - vault.singtel5gplatform.com
+    - vault.example.com
     secretName: singtel5gplatform-com-cert
