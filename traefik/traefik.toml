@@ -12,11 +12,11 @@ defaultEntryPoints = ["http", "https"]
      [entryPoints.https.tls]
      MinVersion = "VersionTLS12"
        [[entryPoints.https.tls.certificates]]
-       CertFile = "/run/secrets/renewal2_star_innogr_am.crt"
-       KeyFile = "/run/secrets/renewal2_star_innogr_am.key"
+       CertFile = "/run/secrets/renewal2_star_am.crt"
+       KeyFile = "/run/secrets/renewal2_star_am.key"
        [[entryPoints.https.tls.certificates]]
-       CertFile = "/run/secrets/renewal2_star_skylabteam_com.crt"
-       KeyFile = "/run/secrets/renewal2_star_skylabteam_com.key"
+       CertFile = "/run/secrets/renewal2_star_com.crt"
+       KeyFile = "/run/secrets/renewal2_star_com.key"
 
 # To enable compression support using gzip format:
 [accessLog]
@@ -30,8 +30,8 @@ swarmmode = true
 
 [web]
 address = ":8443"
-CertFile = "/run/secrets/renewal2_star_innogr_am.crt"
-KeyFile = "/run/secrets/renewal2_star_innogr_am.key"
+CertFile = "/run/secrets/renewal2_star_am.crt"
+KeyFile = "/run/secrets/renewal2_star_am.key"
 
 [web.auth.basic]
 usersFile = "/etc/traefik.htpasswd"
