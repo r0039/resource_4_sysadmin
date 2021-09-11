@@ -1,7 +1,8 @@
-## copy, cut, paste in normal mode
-## terminology: copy is yank (y), cut is delete (d), paste is put (p). 
+# copy, cut, paste in normal mode
+*terminology*: copy is yank (y), cut is delete (d), paste is put (p). 
 
-## copy (y)
+
+### copy (y)
 * yy: copies the current line, including the newline character
 * 3yy: copies three lines, starting from the cursor.
 * y$: copies everything from the cursor to the end of the line.
@@ -10,7 +11,7 @@
 * y%: copies to the matching characters. It supports pairs are (), {}, []. And useful to copy text between matching brackets.
 
 
-## delete (d)
+### delete (d)
 * dd: deletes the current line, including the new line character
 * 3dd: deletes three lines, starting from the cursor. 
 * d$: deletes everything from the cursor to the end of the line. 
@@ -18,12 +19,12 @@
 * d^: deletes everything from the cursor to the start of the line
 
 
-## paste (p)
+### paste (p)
 * p: pastes the text after the cursor. 
 * P: pastes before the cursor.
 
 
-## copy, cut, paste in visual mode
+# copy, cut, paste in visual mode
 visual mode allows selecting and manipulate text. 
 1. Place the cursor to the line you want to begin copping or cutting. 
 2. there are three sub types:
