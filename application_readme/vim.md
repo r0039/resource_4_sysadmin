@@ -35,3 +35,14 @@ visual mode allows selecting and manipulate text.
 4. Press `y` to copy, `d` do cut
 5. Move the cursor to where you want to paste
 6. `P`: paste the content before the cursor, `p` to paste after the cursor.  
+
+# Paste code, but keep the original format 
+Do this before 
+```
+:set paste
+```
+
+Then after 
+```
+:set nopaste
+``` 
