@@ -8,7 +8,7 @@ elif [[ "$RELEASE_TRAIN" =~ ^release-(7|8)?$ ]]; then
 fi
 ```
 
-**What does =~ mean?**.   
+What does =~ mean?   
 It's a regular expression match operator.
 From Bash man page:
 An additional binary operator, `=~`, is available, with the same precedence as `==` and `!=`.  When it is used, the string to the right of the operator is considered an extended regular 
